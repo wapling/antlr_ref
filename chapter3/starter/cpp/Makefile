@@ -1,3 +1,4 @@
+GRAMMAR_NAME = ArrayInit
 
 STD_HEADERS = /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
 
@@ -11,8 +12,8 @@ LDFLAGS = -stdlib=libc++ \
 
 
 OBJS := main.o \
-				ArrayInitLexer.o \
-				ArrayInitParser.o \
+				$(GRAMMAR_NAME)Lexer.o \
+				$(GRAMMAR_NAME)Parser.o \
 
 
 all: example 
@@ -29,4 +30,6 @@ example: $(OBJS)
 clean:		
 	rm -f *.o *.d example
 	rm -rf *.dSYM
+	rm -f *.tokens *.interp
+	rm -r $(GRAMMAR_NAME)*.h $(GRAMMAR_NAME)*.cpp
 
