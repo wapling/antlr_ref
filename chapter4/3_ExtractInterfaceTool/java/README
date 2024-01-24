@@ -1,0 +1,3 @@
+1) antlr4 Java.g4
+2) javac Java*.java ExtractInterface*.java
+3) java ExtractInterfaceTool Demo.java
