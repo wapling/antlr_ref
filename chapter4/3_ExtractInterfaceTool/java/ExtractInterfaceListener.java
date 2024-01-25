@@ -11,6 +11,13 @@ class ExtractInterfaceListener extends JavaBaseListener
   }
 
 	@Override
+  public void enterImportDeclaration(JavaParser.ImportDeclarationContext ctx)
+  {
+    TokenStream tokens = parser.getTokenStream();
+    System.out.println(tokens.getText(ctx));
+  }
+
+	@Override
   public void enterClassDeclaration(JavaParser.ClassDeclarationContext ctx)
   {
     System.out.println("Interface I" + ctx.Identifier() + "\n{");

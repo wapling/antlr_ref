@@ -16,6 +16,12 @@ public:
     parser_(parser)
   {}
 
+  void enterImportDeclaration(JavaParser::ImportDeclarationContext * ctx) override
+  {
+    antlr4::TokenStream* tokens = parser_->getTokenStream();
+    std::cout << tokens->getText(ctx) << '\n';
+  }
+
   void enterClassDeclaration(JavaParser::ClassDeclarationContext * ctx) override
   {
     std::cout << "interface I" << ctx->Identifier()->getSymbol()->getText() << "\n{\n";
