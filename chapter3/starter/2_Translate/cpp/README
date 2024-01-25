@@ -1,0 +1,3 @@
+1) antlr4 -Dlanguage=Cpp ArrayInit.g4
+2) make
+3) ./example
