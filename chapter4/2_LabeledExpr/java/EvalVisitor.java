@@ -15,6 +15,12 @@ class EvalVisitor extends LabeledExprBaseVisitor<Integer>
     return value; 
   }
 
+	@Override
+  public Integer visitClear(LabeledExprParser.ClearContext ctx)
+  {
+    memory.clear();
+    return 0;
+  }
   
 	@Override
   public Integer visitPrintExpr(LabeledExprParser.PrintExprContext ctx) 

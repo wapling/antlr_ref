@@ -20,6 +20,12 @@ public:
     return value;
   }
 
+  std::any visitClear(LabeledExprParser::ClearContext *ctx) override
+  {
+    memory_.clear();
+    return 0;
+  }
+
   std::any visitPrintExpr(LabeledExprParser::PrintExprContext *ctx) override 
   {
     int value = std::any_cast<int>(visit(ctx->expr()));
