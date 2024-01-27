@@ -1,0 +1,5 @@
+1) antlr4 -no-listener Data.g4
+2) javac Data*.java
+3) 
+  grun Data file -tree t.data
+  grun Data file -gui t.data
