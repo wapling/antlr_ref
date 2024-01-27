@@ -1,0 +1,6 @@
+1) antlr4 -Dlanguage=Cpp -no-visitor Rows.g4
+2) make
+3) 
+./example 1 < t.rows 
+./example 2 < t.rows 
+./example 3 < t.rows 

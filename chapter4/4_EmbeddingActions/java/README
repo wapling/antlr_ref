@@ -1,0 +1,6 @@
+1) antlr4 -no-visitor Rows.g4
+2) javac *.java
+3)
+java Col 1 < t.rows 
+java Col 2 < t.rows 
+java Col 3 < t.rows 
