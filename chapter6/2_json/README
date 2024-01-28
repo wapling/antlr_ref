@@ -1,0 +1,8 @@
+1) antlr4 JSON.g4
+2) javac *.java
+3)
+grun JSON json -tokens
+[1, "\u0049", 1.3e9]
+
+grun JSON json -tree
+
