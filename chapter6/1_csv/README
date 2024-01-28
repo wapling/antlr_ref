@@ -1,0 +1,7 @@
+1) antlr4 CSV.g4
+2) javac *.java
+3) 
+grun CSV file -tokens data.csv
+grun CSV file -tree data.csv
+grun CSV file -gui data.csv
+
