@@ -1,0 +1,27 @@
+1) antlr4 Cymbol.g4
+2) javac *.java
+3) 
+grun Cymbol file -gui t.cymbol
+grun Cymbol stat -gui minus_x_plus_y.cymbol
+grun Cymbol stat -gui minus_a_index_i.cymbol
+
+Strange that if the file rule is selected for the last two examples then although the expression
+is tokenised it does not appear in the gui or the tree:
+
+grun Cymbol file -tokens minus_x_plus_y.cymbol // you can see the tokens!
+
+grun Cymbol file -gui minus_x_plus_y.cymbol // gives the following error:
+
+line 1:0 mismatched input '-' expecting {'float', 'int', 'void'}
+
+
+This is caused by the rule 'file' not allowing statements as alternatives - 
+just function and var declarations.
+
+The text says: "To see the precedence in action, take a look at the parse trees for input -x+y; 
+and -a[i]; starting at rule stat (instead of file to reduce clutter)."
+
+To "reduce clutter"?  The grammar does not work in the general sense, one cannot parse these 
+expressions using the rule 'file'.
+
+
