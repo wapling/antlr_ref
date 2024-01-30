@@ -1,6 +1,6 @@
 grammar Cymbol;
 
-file : (functionDecl | varDecl | stat)+ ;
+file : stat+ ;
 
 varDecl
   : type ID ('=' expr)? ';'
@@ -21,6 +21,7 @@ block : '{' stat* '}' ;
 
 stat  : block
       | varDecl
+      | functionDecl
       | 'if' expr 'then' stat ('else' stat)?
       | 'return' expr? ';'
       | expr '=' expr ';'
