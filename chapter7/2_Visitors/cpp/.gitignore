@@ -1,0 +1,3 @@
+PropertyFile*.h
+PropertyFile*.cpp
+!PropertyFileLoader.h
