@@ -1,0 +1,8 @@
+1) antlr4 LExpr.g4
+2) javac *.java
+3) java TestLEvaluatorWithProps
+1+2*3
+EOF
+4) grun LExpr s -tree
+1+2*3
+EOF
