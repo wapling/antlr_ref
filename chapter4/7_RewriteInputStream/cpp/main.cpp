@@ -22,15 +22,14 @@ using antlr4::tree::ParseTreeWalker;
 
 std::unique_ptr<CharStream> get_input_stream(int argc, char* argv[])
 {
-      if (argc > 1) 
-      {
-        std::unique_ptr<ANTLRFileStream> retval = std::make_unique<ANTLRFileStream>();
-        retval->loadFromFile(argv[1]);
-        return retval;
-      }
-      else
-        return std::make_unique<ANTLRInputStream>(ANTLRInputStream(std::cin));
-  
+  if (argc > 1) 
+  {
+    std::unique_ptr<ANTLRFileStream> retval = std::make_unique<ANTLRFileStream>();
+    retval->loadFromFile(argv[1]);
+    return retval;
+  }
+  else
+    return std::make_unique<ANTLRInputStream>(ANTLRInputStream(std::cin));
 }
 
 int main(int argc, char* argv[])
