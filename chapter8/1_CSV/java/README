@@ -1,0 +1,4 @@
+1) antlr4 CSV.g4
+2) javac *.java
+3) java LoadCSV t.csv
+
