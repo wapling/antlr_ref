@@ -1,0 +1,4 @@
+1) antlr4 -Dlanguage=Cpp JSON.g4
+2) make
+3) ./example t.json > out.xml
+4) xmllint --format out.xml
