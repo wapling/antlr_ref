@@ -70,6 +70,7 @@ class XMLEmitter extends JSONBaseListener
       buf.append(getXML(vctx));
       buf.append("</element>\n");
     }
+    setXML(ctx, buf.toString());
   }
 
 	@Override
