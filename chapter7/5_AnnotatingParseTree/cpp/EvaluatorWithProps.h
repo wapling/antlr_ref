@@ -7,22 +7,19 @@
 
 #include <string>
 
-using antlr4::tree::ParseTree;
-using antlr4::tree::ParseTreeProperty;
-
 class EvaluatorWithProps : public LExprBaseListener
 {
 
-  ParseTreeProperty<int> values_;
+  antlr4::tree::ParseTreeProperty<int> values_;
 
 public:
 
-  void setValue(ParseTree* node, int value)
+  void setValue(antlr4::tree::ParseTree* node, int value)
   {
     values_.put(node, value);
   }
 
-  int getValue(ParseTree* node)
+  int getValue(antlr4::tree::ParseTree* node)
   {
     return values_.get(node);
   }
