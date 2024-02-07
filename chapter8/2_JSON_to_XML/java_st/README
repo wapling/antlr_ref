@@ -1,0 +1,4 @@
+1) antlr4 JSON.g4
+2) javac *.java
+3) java JSON2XML t.json > out.xml
+4) xmllint --format out.xml
