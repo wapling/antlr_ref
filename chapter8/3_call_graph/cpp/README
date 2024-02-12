@@ -1,0 +1,4 @@
+1) antlr4 -Dlanguage=Cpp Cymbol.g4
+2) make
+3) ./example t.cymbol > calls.dot
+4) dot -Tpng calls.dot > calls.png

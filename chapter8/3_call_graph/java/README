@@ -1,0 +1,4 @@
+1) antlr4 Cymbol.g4
+2) javac *.java
+3) java CallGraph t.cymbol > calls.dot
+4) dot -Tpng calls.dot > calls.png
