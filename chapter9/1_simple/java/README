@@ -1,0 +1,70 @@
+1) antlr4 Simple.g4
+2) javac *.java
+
+3a) Valid input:
+
+grun Simple prog
+class T { int i; }
+EOF
+var: i
+class: T
+
+
+3b) Extra token detection (two extra tokens):
+
+grun Simple prog
+class T { int f(x) { a = 3 4 5; } }
+EOF
+line 1:27 mismatched input '4' expecting ';'
+method: f
+class: T
+
+
+3c) Extra token detection (two extra tokens):
+
+grun Simple prog -gui
+class T { int f(x) { a = 3 4 5; } }
+EOF
+
+
+3d) Extra token detection (single token deletion):
+
+grun Simple prog
+class T ; { int i; }
+EOF
+line 1:8 extraneous input ';' expecting '{'
+var: i
+class: T
+
+
+3e) Missing token detection (single token insertion):
+
+grun Simple prog
+class T { int f(x) { a = 3; }
+EOF
+found assign: 3
+method: f
+line 2:0 extraneous input '<EOF>' expecting {'}', 'int'}
+class: T
+
+
+3f) Remaining input not consistent with any alternatives:
+
+grun Simple prog
+class T { int ; }
+EOF
+line 1:14 no viable alternative at input 'int;'
+class: T
+
+
+3g) Token recognition error (# is not part of the grammar):
+
+grun Simple prog
+class # { int i; }
+EOF
+line 1:6 token recognition error at: '#'
+line 1:8 missing ID at '{'
+var: i
+class: <missing ID>
+
+

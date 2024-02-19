@@ -1,0 +1,63 @@
+1) antlr4 -Dlanguage=Cpp Simple.g4
+2) make
+
+3a) Valid input:
+
+./example
+class T { int i; }
+EOF
+var: i
+class: T
+
+
+3b) Extra token detection (two extra tokens):
+
+./example
+class T { int f(x) { a = 3 4 5; } }
+EOF
+line 1:27 mismatched input '4' expecting ';'
+found assign: 3
+method: f
+class: T
+
+3c) Extra token detection (single token deletion):
+
+./example
+class T ; { int i; }
+EOF
+line 1:8 extraneous input ';' expecting '{'
+var: i
+class: T
+
+
+3d) Missing token detection (single token insertion):
+
+./example
+class T { int f(x) { a = 3; }
+EOF
+line 2:0 extraneous input '<EOF>' expecting {'}', 'int'}
+found assign: 3
+method: f
+class: T
+
+
+3e) Remaining input not consistent with any alternatives:
+
+./example
+class T { int ; }
+EOF
+line 1:14 no viable alternative at input 'int;'
+class: T
+
+
+3f) Token recognition error (# is not part of the grammar):
+
+./example
+class # { int i; }
+EOF
+line 1:6 token recognition error at: '#'
+line 1:8 missing ID at '{'
+var: i
+class: <missing ID>
+
+
