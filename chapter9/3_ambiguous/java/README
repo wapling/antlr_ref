@@ -1,0 +1,26 @@
+1) antlr4 Ambig.g4
+2) javac *.java
+3) 
+grun Ambig stat
+f();
+EOF
+
+4)
+grun Ambig stat -diagnostics
+f();
+EOF
+line 1:3 reportAttemptingFullContext d=0 (stat), input='f();'
+line 1:3 reportAmbiguity d=0 (stat): ambigAlts={1, 2}, input='f();'
+
+5) java Test_Ambig
+f();
+EOF
+line 1:3 reportAttemptingFullContext d=0 (stat), input='f();'
+line 1:3 reportAmbiguity d=0 (stat): ambigAlts={1, 2}, input='f();'
+f
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "org.antlr.v4.runtime.tree.TerminalNode.getText()" because the return value of "AmbigParser$StatContext.ID()" is null
+	at AmbigErrorListener.exitStat(AmbigErrorListener.java:9)
+	at AmbigParser$StatContext.exitRule(AmbigParser.java:107)
+	at org.antlr.v4.runtime.tree.ParseTreeWalker.exitRule(ParseTreeWalker.java:62)
+	at org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:38)
+	at Test_Ambig.main(Test_Ambig.java:27)
