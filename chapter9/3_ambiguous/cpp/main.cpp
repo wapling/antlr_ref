@@ -50,7 +50,7 @@ int main(int argc, char* argv[])
     CommonTokenStream tokens(&lex);
     AmbigParser parser(&tokens);
     
-    //parser.removeErrorListeners();
+    //parser.removeErrorListeners(); //this suppresses the diagnostics errors if executed
     DiagnosticErrorListener del;
     parser.addErrorListener(&del);
     parser.getInterpreter<ParserATNSimulator>()->setPredictionMode(

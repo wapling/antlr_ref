@@ -17,7 +17,7 @@ class Test_Ambig
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       AmbigParser parser = new AmbigParser(tokens);
 
-      //parser.removeErrorListeners();
+      //parser.removeErrorListeners(); //this suppresses the diagnostics errors if executed
       parser.addErrorListener(new DiagnosticErrorListener());
       parser.getInterpreter().setPredictionMode(PredictionMode.LL_EXACT_AMBIG_DETECTION);
 
