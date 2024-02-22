@@ -1,0 +1,17 @@
+1) antlr4 Vec.g4
+2) javac *.java
+3) 
+grun Vec vec4
+[1,2,3,4,5,6]
+EOF
+line 1:7 rule ints failed predicate: {$i<$max}?
+
+4) antlr4 VecMsg.g4
+5) javac *.java
+6)
+grun VecMsg vec4
+[1,2,3,4,5,6]
+EOF
+line 1:7 rule ints exceeded max 4
+
+
