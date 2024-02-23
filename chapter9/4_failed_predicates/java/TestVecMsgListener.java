@@ -2,13 +2,11 @@ import org.antlr.v4.runtime.*;
 
 class TestVecMsgListener extends VecMsgBaseListener
 {
-  VecMsgParser parser;
   int count;
   int max_count;
 
-  public TestVecMsgListener(VecMsgParser parser, int max_count)
+  public TestVecMsgListener(int max_count)
   {
-    this.parser = parser;
     this.count = 0;
     this.max_count = max_count;
   }
