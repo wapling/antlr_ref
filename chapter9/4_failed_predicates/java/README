@@ -1,0 +1,10 @@
+1) antlr4 VecMsg.g4
+2) javac *.java
+3)
+java Test 
+[1,2,3,4,5,6]
+EOF
+Line: 1:9 rule ints exceeded max 4
+Line: 1:11 rule ints exceeded max 4
+
+
