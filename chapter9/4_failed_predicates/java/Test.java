@@ -17,7 +17,7 @@ class Test
       VecMsgParser parser = new VecMsgParser(tokens);
       ParseTree tree = parser.vec4();
       ParseTreeWalker walker = new ParseTreeWalker();
-      TestVecMsgListener listener = new TestVecMsgListener(4);
+      TestVecMsgListener listener = new TestVecMsgListener(parser, 4);
       walker.walk(listener, tree);
     }
     catch (IOException ex)

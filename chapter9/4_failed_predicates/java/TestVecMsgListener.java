@@ -2,11 +2,13 @@ import org.antlr.v4.runtime.*;
 
 class TestVecMsgListener extends VecMsgBaseListener
 {
+  VecMsgParser parser;
   int count;
   int max_count;
 
-  public TestVecMsgListener(int max_count)
+  public TestVecMsgListener(VecMsgParser parser, int max_count)
   {
+    this.parser = parser;
     this.count = 0;
     this.max_count = max_count;
   }
@@ -24,7 +26,7 @@ class TestVecMsgListener extends VecMsgBaseListener
     if (count > max_count)
     {
       Token token = ctx.INT().getSymbol();
-      System.err.println("Line: " + Integer.toString(token.getLine()) + 
+      parser.notifyErrorListeners("Line: " + Integer.toString(token.getLine()) +
                          ":" + Integer.toString(token.getStartIndex()) +
                          " rule ints exceeded max " + Integer.toString(max_count));
     }
