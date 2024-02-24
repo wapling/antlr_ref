@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
     VecMsgParser parser(&tokens);
     ParseTree* tree = parser.vec4();
     ParseTreeWalker walker;
-    TestVecMsgListener listener(4);
+    TestVecMsgListener listener(&parser, 4);
     walker.walk(&listener, tree);
 
   }
