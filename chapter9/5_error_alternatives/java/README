@@ -1,0 +1,26 @@
+1) antlr4 Call.g4
+2) javac *.java
+3)
+java Test
+f(34);
+EOF
+
+
+4)
+java Test
+f(34));
+EOF
+line 2:0 Too many parentheses
+
+5)
+java Test
+f(34;
+EOF
+line 2:0 Missing closing parenthesis
+
+6)
+java Test
+f(34))));
+EOF
+line 2:0 Too many parentheses
+

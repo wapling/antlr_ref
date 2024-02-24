@@ -1,0 +1,20 @@
+1) antlr4 Call.g4
+2) javac *.java
+3)
+grun Call stat
+f(34);
+EOF
+
+
+4)
+grun Call stat
+f(34));
+EOF
+line 1:6 Too many parentheses
+
+5)
+grun Call stat
+f(34;
+EOF
+line 1:4 Missing closing parenthesis
+
