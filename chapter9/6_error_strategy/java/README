@@ -1,0 +1,43 @@
+1) antlr4 Simple.g4
+2) javac *.java
+
+3a) Leading # to cause Lexer error
+
+java Errors
+# class T { int i; }
+EOF
+line 1:0 token recognition error at: '#'
+Exception in thread "main" java.lang.RuntimeException: LexerNoViableAltException('#')
+	at BailSimpleLexer.recover(BailSimpleLexer.java:15)
+	at org.antlr.v4.runtime.Lexer.nextToken(Lexer.java:145)
+	at org.antlr.v4.runtime.BufferedTokenStream.fetch(BufferedTokenStream.java:169)
+	at org.antlr.v4.runtime.BufferedTokenStream.sync(BufferedTokenStream.java:152)
+	at org.antlr.v4.runtime.BufferedTokenStream.setup(BufferedTokenStream.java:254)
+	at org.antlr.v4.runtime.BufferedTokenStream.lazyInit(BufferedTokenStream.java:249)
+	at org.antlr.v4.runtime.CommonTokenStream.LT(CommonTokenStream.java:92)
+	at org.antlr.v4.runtime.Parser.enterRule(Parser.java:628)
+	at SimpleParser.prog(SimpleParser.java:116)
+	at Errors.main(Errors.java:19)
+Caused by: LexerNoViableAltException('#')
+	at org.antlr.v4.runtime.atn.LexerATNSimulator.failOrAccept(LexerATNSimulator.java:309)
+	at org.antlr.v4.runtime.atn.LexerATNSimulator.execATN(LexerATNSimulator.java:230)
+	at org.antlr.v4.runtime.atn.LexerATNSimulator.matchATN(LexerATNSimulator.java:156)
+	at org.antlr.v4.runtime.atn.LexerATNSimulator.match(LexerATNSimulator.java:111)
+	at org.antlr.v4.runtime.Lexer.nextToken(Lexer.java:141)
+	... 8 more
+
+3b) Syntax error - missing class name
+
+java Errors
+class { }
+EOF
+Exception in thread "main" java.lang.RuntimeException: org.antlr.v4.runtime.InputMismatchException
+	at BailErrorStrategy.recoverInline(BailErrorStrategy.java:17)
+	at org.antlr.v4.runtime.Parser.match(Parser.java:208)
+	at SimpleParser.classDef(SimpleParser.java:181)
+	at SimpleParser.prog(SimpleParser.java:128)
+	at Errors.main(Errors.java:19)
+Caused by: org.antlr.v4.runtime.InputMismatchException
+	... 5 more
+
+

@@ -1,0 +1,18 @@
+1) antlr4 -Dlanguage=Cpp Simple.g4
+2) make
+
+3a) Leading # to cause Lexer error
+
+./example
+# class T { int i; }
+EOF
+line 1:0 token recognition error at: '#'
+Error: std::exception
+
+3b) Syntax error - missing class name
+
+./example
+class { }
+EOF
+Error: std::exception
+
