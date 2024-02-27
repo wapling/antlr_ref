@@ -1,19 +1,23 @@
 # antlr_ref
 Repo for code from the book The Definitive ANTLR4 Reference by Terence Parr
 
-From ANTLR4 Reference pages 24-25:
+## code examples
 
-grun is an alias:
+All examples from the book have been implemented from scratch in Java and C++.
+There is a README in each folder shpwing the build steps.
 
-  alias grun='java org.antlr.v4.gui.TestRig'
+The java build requirements are the same as for the book files.
 
-See (and source!) .antlr4131 in the parent directories of this file for antlr4 and clean etc.
+The C++ makefiles expect the following environment variables:
 
-Use jar tf to dump the classes in the antlr jar:
+  STD_HEADERS
+  ANTLR_HEADERS
+  ANTLR_LIBS
 
-  jar tf /usr/local/lib/antlr-4.13.1-complete.jar > classes
+Mine are currently set as follows:
 
-Then use javap to dump the contents of a given class:
+export STD_HEADERS=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
+export ANTLR_HEADERS="/Users/martinwaplington/Documents/Programming/antlr/source/antlr4-4.13.1/runtime/Cpp/run/usr/local/include/antlr4-runtime"
+export ANTLR_LIBS="/Users/martinwaplington/Documents/Programming/antlr/source/antlr4-4.13.1/runtime/Cpp/run/usr/local/lib"
 
-javap -classpath /usr/local/lib/antlr-4.13.1-complete.jar org/antlr/v4/codegen/model/Parser
 
