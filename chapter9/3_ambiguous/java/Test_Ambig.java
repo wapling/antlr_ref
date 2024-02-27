@@ -20,6 +20,7 @@ class Test_Ambig
       //parser.removeErrorListeners(); //this suppresses the diagnostics errors if executed
       parser.addErrorListener(new DiagnosticErrorListener());
       parser.getInterpreter().setPredictionMode(PredictionMode.LL_EXACT_AMBIG_DETECTION);
+      //parser.setErrorHandler(new MyErrorStrategy());
 
       ParseTree tree = parser.stat();
       ParseTreeWalker walker = new ParseTreeWalker();
