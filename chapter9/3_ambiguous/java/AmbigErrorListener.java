@@ -6,13 +6,13 @@ class AmbigErrorListener extends AmbigBaseListener
 	@Override
   public void exitStat(AmbigParser.StatContext ctx)
   {
-    System.out.println(ctx.ID().getText());
+    System.out.println("AmbigErrorListener.exitStat");
   }
 
 	@Override
   public void exitExpr(AmbigParser.ExprContext ctx)
   {
-    System.out.println(ctx.ID().getText());
+    System.out.println("AmbigErrorListener.exitExpr");
   }
 
 }
