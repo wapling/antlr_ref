@@ -23,7 +23,7 @@ export ANTLR_LIBS="/Users/martinwaplington/Documents/Programming/antlr/source/an
 
 ## Embedded Actions
 
-As much as possible I have tried to provode examples that contain no embedded actions
+As much as possible I have tried to provide extra examples that contain no embedded actions
 in the grammar but are instead implemented in terms of visitors/listeners.
 
 
