@@ -1,7 +1,5 @@
 GRAMMAR_NAME = ArrayInit
 
-STD_HEADERS = /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
-
 CXXFLAGS = -g -std=c++17 -Wall \
 					 -I$(STD_HEADERS) \
 					 -I$(ANTLR_HEADERS) \
