@@ -1,0 +1,15 @@
+1) antlr4 -Dlanguage=Cpp -no-listener Keywords.g4
+2) make
+3) ./example
+
+x = 34;
+EOF
+--no output as no error
+
+4) ./example
+
+if = 34;
+line 1:3 extraneous input '=' expecting {CHAR, INT}
+line 1:7 mismatched input ';' expecting THEN
+
+

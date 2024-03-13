@@ -1,0 +1,14 @@
+1) antlr4 -no-listener Keywords.g4
+2) javac *.java
+3) grun Keywords stat
+
+x = 34;
+EOF
+--no output as no error
+
+grun Keywords stat
+if = 34;
+line 1:3 extraneous input '=' expecting {CHAR, INT}
+line 1:7 mismatched input ';' expecting THEN
+
+
