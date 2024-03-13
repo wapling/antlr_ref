@@ -1,0 +1,3 @@
+1) antlr4 -no-listener CSV.g4
+2) javac *.java
+3) grun CSV file users.csv
