@@ -20,40 +20,6 @@ using namespace antlr4;
 using antlr4::tree::ParseTree;
 using antlr4::tree::ParseTreeWalker;
 
-template <typename K, typename V>
-std::ostream& operator<<(std::ostream& ostrm, std::map<K, V> const& data)
-{
-  ostrm << '{';
-  bool first_time = true;
-  for (auto const& datum : data)
-  {
-    if (first_time)
-      first_time = false;
-    else
-      ostrm << ", ";
-    ostrm << datum.first << ": " << datum.second;
-  }
-  ostrm << '}';
-  return ostrm;
-}
-
-template <typename T>
-std::ostream& operator<<(std::ostream& ostrm, std::vector<T> const& data)
-{
-  ostrm << '[';
-  bool first_time = true;
-  for (auto const& datum : data)
-  {
-    if (first_time)
-      first_time = false;
-    else
-      ostrm << ", ";
-    ostrm << datum;
-  }
-  ostrm << ']';
-  return ostrm;
-}
-
 std::unique_ptr<CharStream> get_input_stream(int argc, char* argv[])
 {
   if (argc > 1) 
