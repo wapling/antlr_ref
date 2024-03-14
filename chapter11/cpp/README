@@ -1,0 +1,26 @@
+1) antlr4 -Dlanguage=Cpp -no-listener Enum.g4
+2) make
+3) make sure pre java 5 enum can be an identifier
+./example 
+enum = 0;
+EOF
+enum=0
+
+4) attempt enum definition
+./example 
+enum temp { HOT, COLD }
+EOF
+line 1:0 no viable alternative at input 'enum'
+
+5) attempt to use enum as an identifier in java 5
+./example -java5
+enum = 0;
+EOF
+line 1:0 no viable alternative at input 'enum'
+
+6) attempt enum definition in java 5
+./example -java5
+enum temp { HOT, COLD }
+EOF
+enum temp
+
