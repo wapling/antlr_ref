@@ -1,0 +1,29 @@
+1) antlr4 -no-listener Enum2.g4
+2) javac *.java
+3) make sure pre java 5 enum can be an identifier
+java TestEnum2 
+enum = 0;
+EOF
+enum=0
+
+4) attempt enum definition
+java TestEnum2
+enum temp { HOT, COLD }
+EOF
+line 1:5 missing '=' at 'temp'
+line 1:10 mismatched input '{' expecting ';'
+line 1:15 mismatched input ',' expecting '='
+line 1:22 mismatched input '}' expecting '='
+
+5) attempt to use enum as an identifier in java 5
+java TestEnum2 -java5
+enum = 0;
+EOF
+line 1:5 mismatched input '=' expecting ID
+
+6) attempt enum definition in java 5
+java TestEnum2 -java5
+enum temp { HOT, COLD }
+EOF
+enum temp
+
