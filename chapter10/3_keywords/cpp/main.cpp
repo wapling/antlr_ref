@@ -1,7 +1,5 @@
-#include "antlr4-common.h"
 #include "CharStream.h"
 #include "CommonTokenStream.h"
-#include "tree/ParseTree.h"
 #include "ANTLRFileStream.h"
 #include "ANTLRInputStream.h"
 
@@ -10,13 +8,10 @@
 
 #include <fstream>
 #include <iostream>
-#include <ostream>
 #include <memory>
 #include <stdexcept>
 
 using namespace antlr4;
-using antlr4::tree::ParseTree;
-using antlr4::tree::ParseTreeWalker;
 
 std::unique_ptr<CharStream> get_input_stream(int argc, char* argv[])
 {
