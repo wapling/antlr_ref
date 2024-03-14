@@ -1,20 +1,15 @@
 #include "antlr4-common.h"
 #include "CharStream.h"
 #include "CommonTokenStream.h"
-#include "tree/ParseTree.h"
-#include "ANTLRFileStream.h"
 #include "ANTLRInputStream.h"
 
 #include "ExprLexer.h"
 #include "ExprParser.h"
 
 #include <iostream>
-#include <memory>
 #include <stdexcept>
 
 using namespace antlr4;
-using antlr4::tree::ParseTree;
-using antlr4::tree::ParseTreeWalker;
 
 int main(int argc, char* argv[])
 {
