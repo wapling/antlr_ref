@@ -1,0 +1,14 @@
+1) antlr4 -no-listener PredCppStat.g4
+2) javac *.java
+3) 
+java TestPredCppStat 
+f(i);
+EOF
+expr f(i)
+
+4) 
+java TestPredCppStat
+T(i);
+EOF
+decl T(i)
+

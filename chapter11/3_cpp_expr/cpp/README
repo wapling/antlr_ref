@@ -1,0 +1,14 @@
+1) antlr4 -Dlanguage=Cpp -no-listener PredCppStat.g4
+2) make
+3) 
+./example
+f(i);
+EOF
+expr f(i)
+
+4) 
+./example
+T(i);
+EOF
+decl T(i)
+
