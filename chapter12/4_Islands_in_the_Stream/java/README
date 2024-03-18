@@ -1,0 +1,33 @@
+1) antlr4 Tags.g4
+2) javac *.java
+3) grun Tags file -tokens cat.xml
+[@0,0:37='<?xml version="1.0" encoding="UTF-8"?>',<TAG>,1:0]
+[@1,38:38='\n',<TEXT>,1:38]
+[@2,39:53='<?do not care?>',<TAG>,2:0]
+[@3,54:54='\n',<TEXT>,2:15]
+[@4,55:63='<CATALOG>',<TAG>,3:0]
+[@5,64:64='\n',<TEXT>,3:9]
+[@6,65:78='<PLANT id="45>',<TAG>,4:0]
+[@7,79:84='Orchid',<TEXT>,4:14]
+[@8,85:92='</PLANT>',<TAG>,4:20]
+[@9,93:93='\n',<TEXT>,4:28]
+[@10,94:103='</CATALOG>',<TAG>,5:0]
+[@11,104:104='\n',<TEXT>,5:10]
+[@12,105:104='<EOF>',<EOF>,6:0]
+
+4) antlr4 ModeTagsLexer.g4
+5) antlr4 ModeTagsParser.g4
+6) javac *.java
+7) grun ModeTags file -tokens
+Hello <name>John</name>
+[@0,0:5='Hello ',<TEXT>,1:0]
+[@1,6:6='<',<'<'>,1:6]
+[@2,7:10='name',<ID>,1:7]
+[@3,11:11='>',<'>'>,1:11]
+[@4,12:15='John',<TEXT>,1:12]
+[@5,16:16='<',<'<'>,1:16]
+[@6,17:17='/',<'/'>,1:17]
+[@7,18:21='name',<ID>,1:18]
+[@8,22:22='>',<'>'>,1:22]
+[@9,23:23='\n',<TEXT>,1:23]
+[@10,24:23='<EOF>',<EOF>,2:0] 
