@@ -1,0 +1,6 @@
+1) antlr4 XMLLexer.g4
+2) antlr4 XMLParser.g4
+3) javac *.java
+4) grun XML document -gui entity.xml
+5) grun XML document -gui cat.xml
+
