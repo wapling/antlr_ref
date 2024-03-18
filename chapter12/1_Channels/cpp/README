@@ -1,0 +1,11 @@
+1) antlr4 -Dlanguage=Cpp Cymbol.g4
+2) make
+3) cat t.cym
+int n = 0; // define a counter
+int i = 9;
+
+4) ./example t.cym
+/*define a counter*/
+int n = 0;
+int i = 9;
+

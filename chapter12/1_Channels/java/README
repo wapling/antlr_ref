@@ -1,0 +1,12 @@
+1) antlr4 Cymbol.g4
+2) javac *.java
+
+3) cat t.cym
+int n = 0; // define a counter
+int i = 9;
+
+4) java ShiftVarComments t.cym
+/*define a counter*/
+int n = 0;
+int i = 9;
+
