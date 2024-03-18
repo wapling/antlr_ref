@@ -1,0 +1,6 @@
+1) antlr4 IDKeyword.g4
+2) javac *.java
+3) grun IDKeyword prog -tree
+if if then call call;
+EOF
+(prog (stat if (expr (id if)) then (stat call (id call) ;)))
