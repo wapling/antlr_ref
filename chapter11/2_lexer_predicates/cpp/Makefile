@@ -1,6 +1,6 @@
 GRAMMAR_NAME = Enum2
 
-CXXFLAGS = -g -std=c++17 -Wall \
+CXXFLAGS = -g -std=c++20 -Wall \
 					 -I$(STD_HEADERS) \
 					 -I$(ANTLR_HEADERS) \
 
